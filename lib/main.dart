@@ -218,7 +218,7 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Signup page'),
+        title: const Text('Sign-up page'),
       ),
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
