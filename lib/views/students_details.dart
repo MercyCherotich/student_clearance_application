@@ -30,7 +30,8 @@ class _StudentDetailsState extends State<StudentDetails> {
                 child: ElevatedButton(
                   child: const Text('Download clearance certificate'),
                   onPressed: () {},
-                )),
+                )
+                ),
           ],
         ),
       ),
