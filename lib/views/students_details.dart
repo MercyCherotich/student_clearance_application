@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pdf/pdf.dart';
 
+import '../constants/app_constants.dart';
+
 
 class StudentDetails extends StatefulWidget {
   const StudentDetails({Key? key}) : super(key: key);
@@ -29,7 +31,17 @@ class _StudentDetailsState extends State<StudentDetails> {
                 padding: const EdgeInsets.all(10),
                 child: ElevatedButton(
                   child: const Text('Download clearance certificate'),
-                  onPressed: () {},
+                  onPressed: () {
+                    firebaseGetData(documentID) {
+                      firebaseFirestore
+                          .collection('students')
+                          .doc(currentUserUID)
+                          .get()
+                          .then((value) {
+                        print(value.data());
+                      });
+                    }
+                  },
                 )
                 ),
           ],
