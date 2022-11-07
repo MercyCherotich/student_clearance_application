@@ -6,6 +6,8 @@ import 'package:pdf/widgets.dart' as pw;
 
 import '../constants/app_constants.dart';
 
+import '../constants/app_constants.dart';
+
 
 class StudentDetails extends StatefulWidget {
   const StudentDetails({Key? key}) : super(key: key);
@@ -29,7 +31,6 @@ class _StudentDetailsState extends State<StudentDetails> {
         actions: [
           IconButton(onPressed: () async{
             final pdf = pw.Document();
-
             pdf.addPage(
               pw.Page(
                 build: (pw.Context context) => pw.Center(
@@ -38,7 +39,32 @@ class _StudentDetailsState extends State<StudentDetails> {
                     pw.Center(child: pw.Text('Student Clearance Form',))
 
                   ]),
+      ),
+              )
+            );
+      body: Center(
+        child: ListView(
+          children: <Widget>[
+            Container(
+                alignment: Alignment.center,
+                height: 500,
+                padding: const EdgeInsets.all(10),
+                child: ElevatedButton(
+                  child: const Text('Download clearance certificate'),
+                  onPressed: () {
+                    firebaseGetData(documentID) {
+                      firebaseFirestore
+                          .collection('students')
+                          .doc(currentUserUID)
+                          .get()
+                          .then((value) {
+                        print(value.data());
+                      });
+                    }
+                  },
+                )
                 ),
+               ]
               ),
             );
 
