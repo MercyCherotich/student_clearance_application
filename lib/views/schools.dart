@@ -15,14 +15,13 @@ class _SchoolScreenState extends State<SchoolScreen> {
   String? selectedValue;
 
   List<String> items = [
-    'School of SSET',
-    'School of Music and Theatre Arts',
-    'School of Business and Economics',
-    'School of Education',
-    'School of Law',
-    'School of Pharmacy',
-    'School of Medicine and Health Sciences',
-    'Institute of Postgraduate Studies',
+    'SSET',
+    'Music and Theatre Arts',
+    'Business and Economics',
+    'Education',
+    'Law',
+    'Pharmacy',
+    'Medicine and Health Sciences',
   ];
   @override
   Widget build(BuildContext context) {

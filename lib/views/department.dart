@@ -14,10 +14,10 @@ class _DepartmentScreenState extends State<DepartmentScreen> {
   String? selectedValue;
 
   List<String> items = [
-    'DEPARTMENT OF MATHEMATICS',
-    'DEPARTMENT OF COMPUTER SCIENCE',
-    'DEPARTMENT OF ENGINEEERING',
-    'DEPARTMENT OF SCIENCE',
+    'MATHEMATICS',
+    'COMPUTER SCIENCE',
+    'ENGINEEERING',
+    'SCIENCE',
   ];
 
   @override

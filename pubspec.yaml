@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   direct_select_flutter: ^1.1.1
   cloud_firestore: ^3.1.15
+  cloud_functions:
   firebase_auth: ^3.3.18
   firebase_core: ^1.17.0
   modal_progress_hud_nsn: ^0.2.1

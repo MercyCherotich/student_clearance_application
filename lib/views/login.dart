@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:student_clearance_application/constants/app_constants.dart';
+import 'package:student_clearance_application/helpers/user_management.dart';
 import 'package:student_clearance_application/views/register.dart';
 import 'package:student_clearance_application/views/residency.dart';
 
@@ -30,8 +32,8 @@ class _LoginScreenState extends State<LoginScreen> {
               email: email, password: password))
           .toString() as User;
       if (user != null) {
-        loggedInUser;
-        //print(loggedInUser.email);
+        //loggedInUser;
+        print(loggedInUser.email);
       }
     } catch (e) {
       print(e);
@@ -55,16 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Center(
             child: ListView(
           children: <Widget>[
-            //Container(
-            //alignment: Alignment.center,
-            //padding: const EdgeInsets.all(10),
-            //child: const Text(
-            //'Name',
-            //style: TextStyle(
-            ///color: Colors.blue,
-            //fontWeight: FontWeight.w500,
-            //fontSize: 30),
-            //)),
+            
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
@@ -132,10 +125,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     try {
                       await _auth.signInWithEmailAndPassword(
                           email: email, password: password);
+                          // UserManagement().handleAuth();
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ResidencyScreen()),
+                            //builder: (context) => UserManagement().handleAuth()),
+                            builder: (context) => ResidencyScreen()),
                       );
                       setState(() {
                         showSpinner = false;
@@ -164,6 +159,26 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
               mainAxisAlignment: MainAxisAlignment.center,
             ),
+            /*Row(
+              children: <Widget>[
+                const Text('Admin Registration:'),
+                TextButton(
+                  child: const Text(
+                    'Register as Admin',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ResidencyScreen()),
+                    );
+                  },
+                )
+              ],
+              mainAxisAlignment: MainAxisAlignment.center,
+            ),
+            */
           ],
         )),
       ),

@@ -92,16 +92,22 @@ class _SignupPageState extends State<SignupPage> {
                         showSpinner = true;
                       });
                       try {
-                        await _auth.createUserWithEmailAndPassword(
+                        FirebaseAuth.instance.signInWithEmailAndPassword(email: 'mn@gmail.com', password: '123456');
+                        UserCredential userCredential =await _auth.createUserWithEmailAndPassword(
                             email: email, password: password);
-//save data to fb
+                            //save data to fb
                         CollectionReference users =
                             FirebaseFirestore.instance.collection(students);
-                        users
-                            .add({
-                              'username': username, // John Doe
-                              'email': email, // Stokes and Sons // 42
+                            FirebaseFirestore.instance.collection(students)
+                            .doc(userCredential.user?.uid)
+                            .set({
+                                'username': username, // John Doe
+                                'email': email,
+                                'role': 'student',
+                                'uid': userCredential.user?.uid,
+
                             })
+                         
                             .then((value) => print("User Added"))
                             .catchError(
                                 (error) => print("Failed to add user: $error"));

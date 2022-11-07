@@ -4,6 +4,8 @@ import 'package:get_storage/get_storage.dart';
 
 String? signUp = 'Create Account';
 
+String? register = 'Create Account';
+
 
 //firebaseFirestoreInstance
 final firebaseFirestore = FirebaseFirestore.instance;
@@ -11,8 +13,12 @@ final firebaseFirestore = FirebaseFirestore.instance;
 //getCurrentUser UID
 var currentUserUID =FirebaseAuth.instance.currentUser!.uid;
 
+//getCurrentAdmin UID
+//var currentAdminUID = FirebaseAuth.instance.currentAdmin!.uid;
+
 //collections
 String students = 'Students';
+String admin = 'admin';
 
 //local storage instance
 final sharedPrefs = GetStorage();
@@ -24,5 +30,9 @@ final Map<String, dynamic> studentDetails ={
 'school' : sharedPrefs.read('school'),
 'department' : sharedPrefs.read('department'),
 'sports' : sharedPrefs.read('sports'),
+};
+
+final Map<String, dynamic> clearanceRequests = {
+  
 };
 
