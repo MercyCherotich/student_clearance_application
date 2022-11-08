@@ -18,8 +18,8 @@ Future main() async {
 
   runApp( GetMaterialApp(
     debugShowCheckedModeBanner: false,
-     //home: LoginScreen(),
-    home: UserManagement().handleAuth(),
+     home: LoginScreen(),
+    //home: UserManagement().handleAuth(),
   ));
 }
 
