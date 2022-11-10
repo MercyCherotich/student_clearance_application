@@ -1,24 +1,29 @@
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:student_clearance_application/helpers/user_management.dart';
+import 'package:student_clearance_application/views/dashboard.dart';
 import 'package:student_clearance_application/views/login.dart';
+
+import 'helpers/user_management.dart';
+import 'firebase_options.dart';
 //import 'package:student_clearance_application/views/user_authentication.dart';
 
 //import 'package:dropdown_button2/dropdown_button2.dart';
 
-Future main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  print('This line printed');
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
 
-  //await GetStorage.init();
+  await GetStorage.init();
 
   runApp( GetMaterialApp(
     debugShowCheckedModeBanner: false,
-     home: LoginScreen(),
+      home: LoginScreen(),
     //home: UserManagement().handleAuth(),
   ));
 }

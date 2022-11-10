@@ -43,7 +43,7 @@ class UserManagement{
            }
            );
         }
-         return LoginScreen();
+         return ResidencyScreen();
         
       }
       );

@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:student_clearance_application/views/admin_login.dart';
 import 'package:student_clearance_application/views/adminonly.dart';
 import 'package:student_clearance_application/views/allusers.dart';
 import 'package:student_clearance_application/helpers/user_management.dart';
@@ -28,22 +29,22 @@ class _DashboardPageState extends State<DashboardPage> {
           new UserAccountsDrawerHeader(accountName:Text(''), accountEmail: Text('')
           ),
           new ListTile(
-            title: new Text('Allusers Page'),
+            title: new Text('Admin Login Page'),
             onTap: (){
               Navigator.of(context).pop();
               Navigator.push(context, 
-              new MaterialPageRoute(builder: (BuildContext context) => new AllusersPage())
+              new MaterialPageRoute(builder: (BuildContext context) => new AdminLogin())
               );
             },
           ),
           new ListTile(
-              title: new Text('Admin Page'),
+              title: new Text('Students Page'),
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.push(
                     context,
                     new MaterialPageRoute(
-                        builder: (BuildContext context) => new AdminPage()));
+                        builder: (BuildContext context) => new LoginScreen()));
               },
             ),
           new ListTile(
@@ -55,7 +56,7 @@ class _DashboardPageState extends State<DashboardPage> {
         ],
         ),
       ),
-      body: Center(
+      /*body: Center(
         child: Center(
           child: ListView(
           children: <Widget>[
@@ -73,8 +74,8 @@ class _DashboardPageState extends State<DashboardPage> {
             
           ] 
           )
-      ),
-      )
+       ),
+      )*/
     );
     
   }

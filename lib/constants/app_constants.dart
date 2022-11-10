@@ -18,6 +18,7 @@ var currentUserUID =FirebaseAuth.instance.currentUser!.uid;
 
 //collections
 String students = 'Students';
+String mercy = 'Mercy';
 String admin = 'admin';
 
 //local storage instance

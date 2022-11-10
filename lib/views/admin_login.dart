@@ -1,22 +1,21 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:student_clearance_application/constants/app_constants.dart';
-import 'package:student_clearance_application/helpers/user_management.dart';
-import 'package:student_clearance_application/views/admin_login.dart';
 import 'package:student_clearance_application/views/admin_registration.dart';
+import 'package:student_clearance_application/views/clearance_requests.dart';
 import 'package:student_clearance_application/views/register.dart';
 import 'package:student_clearance_application/views/residency.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class AdminLogin extends StatefulWidget {
+  const AdminLogin({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<AdminLogin> createState() => _AdminLoginState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _AdminLoginState extends State<AdminLogin> {
   final _auth = FirebaseAuth.instance;
   late User loggedInUser;
   bool showSpinner = false;
@@ -52,14 +51,13 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login page'),
+        title: const Text('Admin Login page'),
       ),
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
         child: Center(
             child: ListView(
           children: <Widget>[
-            
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
@@ -127,12 +125,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     try {
                       await _auth.signInWithEmailAndPassword(
                           email: email, password: password);
-                          // UserManagement().handleAuth();
+                      // UserManagement().handleAuth();
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
                             //builder: (context) => UserManagement().handleAuth()),
-                            builder: (context) => ResidencyScreen()),
+                            builder: (context) => ClearanceRequests()),
                       );
                       setState(() {
                         showSpinner = false;
@@ -154,36 +152,33 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const SignupPage()),
+                          builder: (context) => const AdminSignupPage()),
                     );
                   },
                 )
               ],
               mainAxisAlignment: MainAxisAlignment.center,
             ),
-            const SizedBox(
-              height: 130,
-            ),
-            Row(
+            /*Row(
               children: <Widget>[
-                const Text('Is an admin?'),
+                const Text('Admin Registration:'),
                 TextButton(
                   child: const Text(
-                    'Login as Admin',
+                    'Register as Admin',
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const AdminLogin()),
+                          builder: (context) => const ResidencyScreen()),
                     );
                   },
                 )
               ],
               mainAxisAlignment: MainAxisAlignment.center,
             ),
-            
+            */
           ],
         )),
       ),
@@ -191,12 +186,13 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future createUser({required String username}) async {
-    final docUser = firebaseFirestore.collection('users').doc('my-id');
+    final docAdmin = firebaseFirestore.collection('admin').doc('my-id');
     final json = {
       'username': username,
       'password': password,
     };
-    await docUser.set(json);
+    await docAdmin.set(json);
   }
 }
+
 

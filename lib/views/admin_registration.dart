@@ -3,16 +3,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:student_clearance_application/constants/app_constants.dart';
-import 'package:student_clearance_application/views/login.dart';
+import 'package:student_clearance_application/views/admin_login.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({Key? key}) : super(key: key);
+class AdminSignupPage extends StatefulWidget {
+  const AdminSignupPage({Key? key}) : super(key: key);
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<AdminSignupPage> createState() => _AdminSignupPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
+class _AdminSignupPageState extends State<AdminSignupPage> {
   final _auth = FirebaseAuth.instance;
   bool showSpinner = false;
 
@@ -27,7 +27,7 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign-up page'),
+        title: const Text('Admin-sign-up page'),
       ),
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
@@ -82,7 +82,6 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
             ),
-            
             Container(
                 height: 50,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -93,12 +92,15 @@ class _SignupPageState extends State<SignupPage> {
                         showSpinner = true;
                       });
                       try {
-                        FirebaseAuth.instance.signInWithEmailAndPassword(email: '', password: '');
-                        UserCredential userCredential =await _auth.createUserWithEmailAndPassword(
-                            email: email, password: password);
-                            //save data to fb
-                            CollectionReference users =
-                            FirebaseFirestore.instance.collection(students);
+                        FirebaseAuth.instance.signInWithEmailAndPassword(email: '', password: ''
+                            //email: 'mn@gmail.com', password: '123456'
+                            );
+                        UserCredential userCredential =
+                            await _auth.createUserWithEmailAndPassword(
+                                email: email, password: password);
+                        //save data to fb
+                        CollectionReference users =
+                            FirebaseFirestore.instance.collection(admin);
                         users
                             .add({
                               'username': username, // John Doe
@@ -107,28 +109,11 @@ class _SignupPageState extends State<SignupPage> {
                             .then((value) => print("User Added"))
                             .catchError(
                                 (error) => print("Failed to add user: $error"));
-                        /*CollectionReference users =
-                            FirebaseFirestore.instance.collection(students);
-                            FirebaseFirestore.instance.collection(students)
-                            .doc(currentUserUID)
-                            .set({
-                                'username': username, // John Doe
-                                'email': email,
-                                'role': 'student',
-                                'uid': userCredential.user?.uid,
-
-                            }
-                            )
-                         
-                            .then((value) => print("User Added"))
-                            .catchError(
-                                (error) => print("Failed to add user: $error"));
-                                */
 
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const LoginScreen()),
+                              builder: (context) => const AdminLogin()),
                         );
                         setState(() {
                           showSpinner = false;
@@ -136,13 +121,7 @@ class _SignupPageState extends State<SignupPage> {
                       } catch (e) {
                         print(e);
                       }
-                    }
-                    )
-                    ),
-                    const SizedBox(
-              height: 130,
-            ),
-            Text('New User? Create Account')
+                    })),
           ],
         )),
       ),

@@ -7,42 +7,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:775128372872:android:9efce05ec57b1713bf313d",
-        "android_client_info": {
-          "package_name": "com.example.student_clearance_app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "775128372872-cjkk26tfq1bivrp66d3pr669u4lq22ts.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDl1BPIhdSrNDcmRb8CyldCXglqKeYKQZo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "775128372872-cjkk26tfq1bivrp66d3pr669u4lq22ts.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "775128372872-i0pimbdfk45e06hll76v27qltr1m7rrt.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.studentClearanceApp"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:775128372872:android:e0be1a714c924cd0bf313d",
         "android_client_info": {
           "package_name": "com.mercy.student_clearance_application"

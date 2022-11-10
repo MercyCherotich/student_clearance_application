@@ -6,9 +6,6 @@ import 'package:pdf/widgets.dart' as pw;
 
 import '../constants/app_constants.dart';
 
-import '../constants/app_constants.dart';
-
-
 class StudentDetails extends StatefulWidget {
   const StudentDetails({Key? key}) : super(key: key);
 

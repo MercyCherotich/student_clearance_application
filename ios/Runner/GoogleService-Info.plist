@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>775128372872-vjml3vc6kh4urie75t35u95f7q7v49vt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.775128372872-vjml3vc6kh4urie75t35u95f7q7v49vt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDLnA0gzvdYMAhsVJXQB-TcQdBfO0N7DeM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>775128372872</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.studentClearanceApplication</string>
+	<key>PROJECT_ID</key>
+	<string>sclearance-c1f64</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sclearance-c1f64.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:775128372872:ios:97ef4663d555800cbf313d</string>
+</dict>
+</plist>
