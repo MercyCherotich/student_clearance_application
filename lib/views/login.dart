@@ -7,6 +7,7 @@ import 'package:student_clearance_application/helpers/user_management.dart';
 import 'package:student_clearance_application/views/admin_login.dart';
 import 'package:student_clearance_application/views/admin_registration.dart';
 import 'package:student_clearance_application/views/register.dart';
+import 'package:student_clearance_application/views/user_page.dart';
 import 'package:student_clearance_application/views/residency.dart';
 
 class LoginScreen extends StatefulWidget {

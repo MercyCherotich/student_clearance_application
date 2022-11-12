@@ -33,7 +33,11 @@ final Map<String, dynamic> studentDetails ={
 'sports' : sharedPrefs.read('sports'),
 };
 
-final Map<String, dynamic> clearanceRequests = {
+final Map<String, dynamic> ClearanceStatus = {
+  'Username': sharedPrefs.read('Username'),
+  'Faculty': sharedPrefs.read('Faculty'),
+  'Hostel': sharedPrefs.read('Hostel'),
+  'sports': sharedPrefs.read('sports'),
   
 };
 

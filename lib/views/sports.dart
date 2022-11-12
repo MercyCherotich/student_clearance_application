@@ -62,13 +62,12 @@ class _SportScreenState extends State<SportScreen> {
                 child: ElevatedButton(
                   child: const Text('SUBMIT'),
                   onPressed: () {
-//store to local storage
-sharedPrefs.write('sports', selectedValue);
-//store data to firestore
-DocumentReference<Map<String, dynamic>> reference = firebaseFirestore
-.collection(students).doc(currentUserUID);
-
-reference.set(studentDetails).then((value) => print('uploaded'));
+                 //store to local storage
+                sharedPrefs.write('sports', selectedValue);
+                 //store data to firestore
+                 DocumentReference<Map<String, dynamic>> reference = firebaseFirestore
+                  .collection(students).doc(currentUserUID);
+                  reference.set(studentDetails).then((value) => print('uploaded'));
                     Navigator.push(
                       context,
                       MaterialPageRoute(
