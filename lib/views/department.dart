@@ -66,7 +66,8 @@ class _DepartmentScreenState extends State<DepartmentScreen> {
                               )),
                     );
                   },
-                )),
+                )
+                ),
           ],
         ),
       ),

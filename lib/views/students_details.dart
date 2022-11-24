@@ -20,7 +20,6 @@ class _StudentDetailsState extends State<StudentDetails> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("Student Details"),
@@ -35,7 +34,8 @@ class _StudentDetailsState extends State<StudentDetails> {
                     pw.Center(child: pw.Text('Kabarak University',)),
                     pw.Center(child: pw.Text('Student Clearance Form',))
 
-                  ]),
+                  ]
+                  ),
       ),
               )
             );
@@ -67,9 +67,11 @@ class _StudentDetailsState extends State<StudentDetails> {
 
             final file = File('clearance.pdf');
             await file.writeAsBytes(await pdf.save());
-          }, icon: const Icon(Icons.save_alt_outlined))
+          },
+           icon: const Icon(Icons.save_alt_outlined))
         ],
       ),
+      
       body: StreamBuilder(
         stream: firebaseFirestore
             .collection(students)
@@ -84,16 +86,33 @@ class _StudentDetailsState extends State<StudentDetails> {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
+                  /*
                   const Center(child: Text('Kabarak University',)),
                   const Center(child: Text('Student Clearance Certificate',)),
                   Center(child: Text(querySnapshot.get('school'))),
-
+                   */
+                  const Center(
+                      child: Text(
+                    'Kabarak University',
+                  )),
+                  const Center(
+                      child: Text(
+                    'Mercy Cherotich',
+                  )),
                   DataTable(
+                     columns: const <DataColumn>[
+                        DataColumn(
+                        label: Text(
+                        'Details',
+                          ),
+                         ),
+                      
+                  /*
                       columns: const [
-                        DataColumn(label: Text('')),
+                        DataColumn(label: Text('Clearance')),*/
                       ],
                       rows: [
-                        DataRow(cells: [
+                        DataRow(cells: <DataCell>[
                           DataCell(Text(querySnapshot.get('department')),),
                         ]),
                         DataRow(cells: [
@@ -109,16 +128,18 @@ class _StudentDetailsState extends State<StudentDetails> {
                   ),
                 ],
               ),
-            );
-
+            ); 
           } else{
            return const CircularProgressIndicator();
           }
 
         },
       ),
+      
     );
   }
+
+  
 
   List _buildList(BuildContext context, List snapshot) {
     return  snapshot.map((data) => _buildListItem(context, data)).toList();
@@ -130,6 +151,7 @@ class _StudentDetailsState extends State<StudentDetails> {
       DataCell(Text(data[''])),
       DataCell(Text(data[''])),
       DataCell(Text(data[''])),
-    ]);
+    ]
+    );
   }
 }

@@ -7,6 +7,7 @@ import 'package:student_clearance_application/views/admin_registration.dart';
 import 'package:student_clearance_application/views/clearance_requests.dart';
 import 'package:student_clearance_application/views/register.dart';
 import 'package:student_clearance_application/views/residency.dart';
+import 'package:student_clearance_application/views/requests.dart';
 
 class AdminLogin extends StatefulWidget {
   const AdminLogin({Key? key}) : super(key: key);
@@ -130,7 +131,8 @@ class _AdminLoginState extends State<AdminLogin> {
                         context,
                         MaterialPageRoute(
                             //builder: (context) => UserManagement().handleAuth()),
-                            builder: (context) => ClearanceRequests()),
+                            //builder: (context) => SimpleDataTable()),
+                            builder: (context) => MyHomePage()),
                       );
                       setState(() {
                         showSpinner = false;

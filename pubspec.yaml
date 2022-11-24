@@ -46,6 +46,7 @@ dependencies:
   pdf:
   ready: ^1.2.8
   cloud_functions: ^3.3.0
+  syncfusion_flutter_datagrid: ^20.3.58
 
 dev_dependencies:
   flutter_test:

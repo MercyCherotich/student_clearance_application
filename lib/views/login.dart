@@ -7,6 +7,7 @@ import 'package:student_clearance_application/helpers/user_management.dart';
 import 'package:student_clearance_application/views/admin_login.dart';
 import 'package:student_clearance_application/views/admin_registration.dart';
 import 'package:student_clearance_application/views/register.dart';
+import 'package:student_clearance_application/views/status.dart';
 import 'package:student_clearance_application/views/user_page.dart';
 import 'package:student_clearance_application/views/residency.dart';
 
@@ -133,7 +134,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         context,
                         MaterialPageRoute(
                             //builder: (context) => UserManagement().handleAuth()),
-                            builder: (context) => ResidencyScreen()),
+                            //builder: (context) => ResidencyScreen()),
+                            builder: (context) => MyStatusPage()),
                       );
                       setState(() {
                         showSpinner = false;
@@ -155,6 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
+                          //builder: (context) => const SignupPage()),
                           builder: (context) => const SignupPage()),
                     );
                   },
