@@ -45,12 +45,8 @@ dependencies:
   get_storage:
   pdf:
   ready: ^1.2.8
-<<<<<<< HEAD
-  cloud_functions: ^3.3.0
-  syncfusion_flutter_datagrid: ^20.3.58
-=======
   cloud_functions: ^4.0.5
->>>>>>> 7860b01a2c6a309214bf993b6b91a47a0695073b
+  syncfusion_flutter_datagrid: ^20.3.58
 
 dev_dependencies:
   flutter_test:

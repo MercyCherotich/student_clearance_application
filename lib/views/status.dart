@@ -92,9 +92,9 @@ class EmployeeDataSource extends DataGridSource {
     _employeeData = employeeData
         .map<DataGridRow>((e) => DataGridRow(cells: [
               DataGridCell<String>(columnName: 'name', value: e.approvalLevel),
-              DataGridCell<String>(columnName: 'action', value: e.action),
               DataGridCell<String>(
                   columnName: 'department', value: e.status),
+                  DataGridCell<String>(columnName: 'action', value: e.action),
              
             ]))
         .toList();
