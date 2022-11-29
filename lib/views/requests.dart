@@ -66,10 +66,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Employee> getEmployeeData() {
     return [
-      Employee('cherotich', 'cherotich@gmail.com', 'Mathematics', 'approved'),
-      Employee('cherotich', 'cherotich@gmail.com', 'Sports', 'approved'),
-      Employee('cherotich', 'cherotich@gmail.com', 'Hostel', 'approved'),
-      Employee('cherotich', 'cherotich@gmail.com', 'SSET', 'approved'),
+      Employee('cherotich', 'cherotich@gmail.com', 'Mathematics', 'approve'),
+      Employee('cherotich', 'cherotich@gmail.com', 'Sports', 'reject'),
+      Employee('cherotich', 'cherotich@gmail.com', 'Hostel', 'approve'),
+      Employee('cherotich', 'cherotich@gmail.com', 'SSET', 'approve'),
     ];
   }
 }
